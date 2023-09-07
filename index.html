@@ -1192,7 +1192,7 @@ Chair
               data-wow-duration="1s"
               data-wow-delay="0.3s"
             >
-              <h6>Learn More with us</h6>
+              <h6>Download Our Ebook</h6>
               <h4>On Activities For Elderly</h4>
               <div class="line-dec"></div>
             </div>
@@ -1202,7 +1202,7 @@ Chair
             data-wow-duration="1s"
             data-wow-delay="0.8s"
           >
-            <form id="search" action="#" method="GET">
+            <form id="search" action="https://formspree.io/f/xbjvyqnl" method="post">
               <div class="row">
                 <div class="col-lg-4 col-sm-4">
                   <fieldset>
@@ -1231,12 +1231,14 @@ Chair
                 <div class="col-lg-4 col-sm-4">
                   <fieldset>
                     <button type="submit" class="main-button">
-                      Get Intouch Now
+                      Download Now
                     </button>
                   </fieldset>
                 </div>
               </div>
             </form>
+            <!-- Hidden iframe to handle form submission -->
+            <iframe name="hidden-iframe" style="display: none;"></iframe>
           </div>
         </div>
       </div>
@@ -1389,5 +1391,17 @@ Chair
     <script src="assets/js/animation.js"></script>
     <script src="assets/js/imagesloaded.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script>
+      // Event listener for form submission
+      document.getElementById('submit-button').addEventListener('click', function() {
+          // Trigger the file download automatically
+          downloadFile('https://drive.google.com/uc?export=download&id=16AGJ8RNAg3-c8X0Y-vf7D4L-DSAzIKtt');
+      });
+
+      // Function to trigger the file download
+      function downloadFile(url) {
+          window.open(url, '_blank');
+      }
+  </script>
   </body>
 </html>
